@@ -1,0 +1,17 @@
+
+server:
+  port: 8082
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/kristina
+    username: postgres
+    password: 80502667767
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: validate
+    properties:
+     hibernate:
+      jdbc.lob.non_contextual_creation: true
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+
+

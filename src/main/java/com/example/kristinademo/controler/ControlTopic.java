@@ -24,13 +24,14 @@ public class ControlTopic {
 
         return topicService.readAll();
     }
+
     @GetMapping(value = "/nameThemes/{themes}")
     public List<TopicDto> getNameThemes(@PathVariable("themes") String themes) {
         return topicService.findThemes(themes);
     }
 
     @GetMapping(value = "/topic/{id}")
-    public ResponseEntity<TopicDto> getEntity(@PathVariable("id") Long id ){
+    public ResponseEntity<TopicDto> getEntity(@PathVariable("id") Long id) {
         var topic = topicService.readId(id);
         return ResponseEntity.ok().body(topic);
     }
@@ -41,16 +42,18 @@ public class ControlTopic {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-;    @PutMapping(value = "/topic/{id}")
-    public ResponseEntity<TopicDto> update(@PathVariable("id") Long id){
-       topicService.update(id);
+    ;
+
+    @PutMapping(value = "/topic/{id}")
+    public ResponseEntity<TopicDto> update(@PathVariable("id") Long id) {
+        topicService.update(id);
         return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
     @DeleteMapping(value = "topic/{id}")
     public ResponseEntity<TopicDto> delete(@PathVariable("id") Long id) {
-    topicService.delete(id);
+        topicService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

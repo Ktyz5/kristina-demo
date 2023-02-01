@@ -5,7 +5,6 @@ import com.example.kristinademo.mapper.TopicMapper;
 import com.example.kristinademo.model.Topic;
 import com.example.kristinademo.repository.TopicRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -65,7 +64,7 @@ public class TopicServiceImpl implements TopicService {
 
     @Override
     public List<TopicDto> findThemes(String find) {
-        var topic =topicRepository.findAll().stream().filter(clie -> clie.getNameThemes().equals(find)).collect(Collectors.toList());
+        var topic = topicRepository.findAll().stream().filter(clie -> clie.getNameThemes().equals(find)).collect(Collectors.toList());
         return topicMapper.mapperListDto(topic);
 
     }

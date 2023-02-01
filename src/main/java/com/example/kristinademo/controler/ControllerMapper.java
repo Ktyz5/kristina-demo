@@ -17,8 +17,8 @@ public class ControllerMapper {
     private final ClientMapper clientMapper;
 
     @GetMapping("/mapper/{id}")
-    public ClientDto getClientMap(@PathVariable("id") Long id){
-     return clientService.readId(id);
+    public ClientDto getClientMap(@PathVariable("id") Long id) {
+        return clientService.readId(id);
 
     }
 }

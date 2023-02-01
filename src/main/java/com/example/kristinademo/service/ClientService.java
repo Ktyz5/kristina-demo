@@ -6,25 +6,28 @@ import com.example.kristinademo.repository.ClientRepository;
 
 import java.util.List;
 
-public interface ClientService  {
+public interface ClientService {
     //     * Создает нового клиента
 //     * @param client - клиент для создания
 //     */
-   void create(ClientDto clientDto);
-//
+    void create(ClientDto clientDto);
+
+    //
 //    /**
 //     * Возвращает список всех имеющихся клиентов
 //     * @return список клиентов
 //     */
-   List<ClientDto> readAll();
-//
+    List<ClientDto> readAll();
+
+    //
 //    /**
 //     * Возвращает клиента по его ID
 //     * @param id - ID клиента
 //     * @return - объект клиента с заданным ID
 //     */
-   ClientDto readId(long id);
-//
+    ClientDto readId(long id);
+
+    //
 //    /**
 //     * Обновляет клиента с заданным ID,
 //     * в соответствии с переданным клиентом
@@ -32,15 +35,16 @@ public interface ClientService  {
 //     * @param id - id клиента которого нужно обновить
 //     * @return - true если данные были обновлены, иначе false
 //     */
-   boolean update(long clientId);
-//
+    boolean update(long clientId);
+
+    //
 //    /**
 //     * Удаляет клиента с заданным ID
 //     * @param id - id клиента, которого нужно удалить
 //     * @return - true если клиент был удален, иначе false
 //     */
-   boolean delete(long clientId);
+    boolean delete(long clientId);
 
-   List<ClientDto> sorted(String sorted);
+    List<ClientDto> sorted(String sorted);
 
 }

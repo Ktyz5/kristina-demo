@@ -7,7 +7,6 @@ import com.example.kristinademo.model.Client;
 
 import com.example.kristinademo.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +31,8 @@ public class ClientServiceImpl implements ClientService {
             } else clientRepository.save(client);
             System.out.println(clien);
 
-        }}
+        }
+    }
 
     @Override
     public List<ClientDto> readAll() {
@@ -49,7 +49,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public boolean update( long clientId) {
+    public boolean update(long clientId) {
         var client = clientRepository.findById(clientId).orElseThrow(() -> new ResourceNotFoundException("Client not found for this id :: " + clientId));
         client.setLastName(client.getLastName());
         client.setFirstName(client.getFirstName());
@@ -74,7 +74,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public List<ClientDto> sorted(String findName) {
-        var client =clientRepository.findAll().stream().filter(x-> x.getLastName().equals(findName)).collect(Collectors.toList());
+        var client = clientRepository.findAll().stream().filter(x -> x.getLastName().equals(findName)).collect(Collectors.toList());
 
         return clientMapper.mapperListDto(client);
     }

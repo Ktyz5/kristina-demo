@@ -1,6 +1,5 @@
 package com.example.kristinademo.dto;
 
-import jakarta.persistence.Column;
 import lombok.*;
 
 @Getter

@@ -16,7 +16,7 @@ public class Topic {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-  //  @HashCodeExclude
+    //  @HashCodeExclude
     private Long id;
 
     @Column(name = "name_themes")

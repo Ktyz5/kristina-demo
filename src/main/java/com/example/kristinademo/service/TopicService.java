@@ -1,8 +1,6 @@
 package com.example.kristinademo.service;
 
 import com.example.kristinademo.dto.TopicDto;
-import com.example.kristinademo.model.Topic;
-
 import java.util.List;
 
 public interface TopicService {
@@ -10,12 +8,14 @@ public interface TopicService {
 //     * @param Topic - клиент для создания
 //     */
     void create(TopicDto topicDto);
+
     //
 //    /**
 //     * Возвращает список всех имеющихся клиентов
 //     * @return список клиентов
 //     */
     List<TopicDto> readAll();
+
     //
 //    /**
 //     * Возвращает клиента по его ID
@@ -23,6 +23,7 @@ public interface TopicService {
 //     * @return - объект клиента с заданным ID
 //     */
     TopicDto readId(long topicId);
+
     //
 //    /**
 //     * Обновляет клиента с заданным ID,
@@ -32,6 +33,7 @@ public interface TopicService {
 //     * @return - true если данные были обновлены, иначе false
 //     */
     boolean update(long topicId);
+
     //
 //    /**
 //     * Удаляет клиента с заданным ID
